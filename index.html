@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>《弟子规》 - 文博社</title>
+    <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="container">
+    <article class="heti heti--ancient">
+        <h1>弟子规</h1>
+        <p class="heti-small article-description">
+            《弟子规》是清代教育家李毓秀所作的三言韵文，是依据孔子教诲编成的学童生活规范。以三字为一句、两句为一韵编撰而成。全文共 360 句、1080 个字，核心思想是儒家的孝悌仁爱。《弟子规》文笔自然流畅，朴实无华，影响深远，在清代文化中占有重要地位。
+        </p>
+        <p class="heti-verse heti-x-large" id="article-body">
+        </p>
+    </article>
+    <footer>
+        <hr>
+        <small class="power-by">文字排版效果由 <a href="https://sivan.github.io/heti/">赫蹏</a> 驱动，网页托管于 <a href="https://github.com/WingBo/dizigui">GitHub</a> 。</small>
+    </footer>
+</main>
+
+<script src="//unpkg.com/heti/umd/heti-addon.min.js"></script>
+<script src="./data.js"></script>
+<script>
+    let artBodyEl = document.getElementById("article-body");
+    const contentItems = dzgData.content
+    let _body = "";
+    contentItems.forEach(content => {
+        _body += content + '<br>';
+    })
+    artBodyEl.innerHTML = _body;
+    const heti = new Heti('.heti');
+    heti.autoSpacing();
+</script>
+</body>
+</html>
